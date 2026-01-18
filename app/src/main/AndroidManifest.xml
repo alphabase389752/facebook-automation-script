@@ -1,0 +1,68 @@
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.alphabase389752.facebook-automation-script">
+    
+    <!-- 
+        This is the AndroidManifest.xml for the Facebook automation script application. 
+        This application is designed for automation on social media platforms like Facebook, 
+        providing a user-friendly interface and 24/7 operations.
+    -->
+
+    <!-- Permissions required for the application -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- 
+        Permission to access the internet. 
+        Necessary for connecting to social media platforms for automation tasks.
+    -->
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!-- 
+        Permission to write to external storage. 
+        Used for saving logs and configuration files necessary for automation.
+    -->
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <!-- 
+        Permission to read from external storage. 
+        Required for accessing saved data and configuration files.
+    -->
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="Facebook automation script - Android Automation Tool"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <!-- 
+            Main Activity of the application.
+            This is where the user will interact with the application.
+        -->
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- 
+            Automation Service for handling background tasks.
+            This service will manage the automation processes for Facebook and other supported platforms.
+        -->
+        <service android:name=".AutomationService" 
+                 android:enabled="true"
+                 android:exported="false">
+        </service>
+
+    </application>
+
+</manifest>
+``` 
+
+### 说明：
+- `MainActivity` 是应用的主要入口，用户可以在此与Facebook自动化脚本进行交互。
+- `AutomationService` 是用于处理自动化任务的后台服务，支持24小时不间断运行。
+- 该应用可以在真实安卓手机、云手机或模拟器上运行，提供图形化界面，用户无需编写代码即可配置参数，极大提高了用户体验。
